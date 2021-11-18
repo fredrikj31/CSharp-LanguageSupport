@@ -13,7 +13,7 @@ namespace LanguageSupport {
 			//}
 
 			lang.setLanguage("de-DE");
-			Console.WriteLine(lang.getTranslation("insert"));
+			Console.WriteLine(lang.getTranslation("insert").capitalizeString());
 		}
 	}
 }
