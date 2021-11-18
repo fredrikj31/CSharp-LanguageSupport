@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Globalization;
 
 namespace LanguageSupport {
 	internal class Program {
 		static void Main(string[] args) {
 			Language lang = new Language();
 
-			//string[] resources = lang.getResources();
+			//CultureInfo[] resources = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
-			//foreach (string item in resources) {
-			//	Console.WriteLine(item);
+			//foreach (CultureInfo item in resources) {
+			//	Console.WriteLine(item.Name);
 			//}
 
-			Console.WriteLine(lang.getLanguage());
+			lang.setLanguage("de-DE");
+			Console.WriteLine(lang.getTranslation("insert"));
 		}
 	}
 }

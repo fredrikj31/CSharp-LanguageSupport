@@ -16,13 +16,31 @@ namespace LanguageSupport {
 
 		public Language() {
 			this.selectedLanguage = CultureInfo.CurrentCulture.Name;
-			string fileContent = this.getFileContent(this.selectedLanguage);
 
-			this.languageFormattedFile = this.formatFileContent(fileContent);
+			this.loadFile();
 		}
 
 		public string getLanguage() {
 			return this.selectedLanguage;
+		}
+
+		public void setLanguage(string country) {
+			this.selectedLanguage = new CultureInfo(country).Name;
+			this.loadFile();
+		}
+
+		public string getTranslation(string keyWord) {
+			JsonElement root = this.languageFormattedFile.RootElement;
+
+			string result = root.GetProperty(keyWord).GetString();
+
+			return result;
+		}
+
+		private void loadFile() {
+			string fileContent = this.getFileContent(this.selectedLanguage);
+
+			this.languageFormattedFile = this.formatFileContent(fileContent);
 		}
 
 		private string getFileContent(string countryCode) {

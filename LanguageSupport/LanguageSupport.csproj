@@ -7,10 +7,12 @@
 
   <ItemGroup>
     <None Remove="Language\da-DK.json" />
+    <None Remove="Language\de-DE.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Language\da-DK.json" />
+    <EmbeddedResource Include="Language\de-DE.json" />
   </ItemGroup>
 
 </Project>
